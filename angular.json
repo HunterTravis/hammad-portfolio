@@ -30,9 +30,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/webassets/bootstrap-5.3.2-dist/css/bootstrap.css"
             ],
-            "scripts": [],
+            "scripts": ["src/webassets/bootstrap-5.3.2-dist/js/bootstrap.js"],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -95,9 +96,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/webassets/bootstrap-5.3.2-dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": ["src/webassets/bootstrap-5.3.2-dist/js/bootstrap.js"]
           }
         }
       }
