@@ -14,7 +14,7 @@
         flex-direction: row;
         justify-content:space-between;
         height:4rem;
-        width:55rem;
+        width:73rem;
         background-color:transparent !important;
        
             .profile-image {
@@ -29,6 +29,37 @@
             flex-direction: row;
             align-items: center;
             gap:2rem;
+            a{
+                position: relative;
+                background-color: transparent !important;
+                color:white;
+                text-decoration: none;
+                text-transform: uppercase !important;
+                font-size:1rem;
+                border: 2px solid white;
+                letter-spacing:0.1rem;
+                font-weight: 400;
+                padding: 10px 30px;
+                transition: 0.5s;
+            }
+            a:hover{
+                background-color:transparent !important;
+                letter-spacing: 0.25rem;
+                box-shadow: 0 0 35px var(--clr);
+            }
+            a:before{
+                content: '';
+                position:absolute;
+                inset: 2px;
+                background-color:transparent !important;
+            }
+            a span{
+                position: relative;
+                z-index: 1;
+
+            }
+
+
             h4{
                 color:white !important;
                 cursor:pointer !important;

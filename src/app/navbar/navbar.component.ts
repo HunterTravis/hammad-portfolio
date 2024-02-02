@@ -9,12 +9,13 @@ import { Component } from '@angular/core';
       <div class="nav-bar-items">
           <img class="profile-image" src="/assets/images/HammadPicture.jpg" alt="">
           <div class="naviation-items">
-            <h4>About Me</h4>
-            <h4>Projects</h4>
-            <h4>Skills</h4>
-            <h4>Languages</h4>
-            <h4>Resume</h4>
-            <h4>Contact Me</h4>
+            <a href="#" class="--clr:#1e9bff"><span>About Me</span></a>
+            <a href="#" class="--clr:#1e9bff"><span>Projects</span></a>
+            <a href="#" class="--clr:#1e9bff"><span>Skills</span></a>
+            <a href="#" class="--clr:#1e9bff"><span>Languages</span></a>
+            <a href="#" class="--clr:#1e9bff"><span>Resume</span></a>
+            <a href="#" class="--clr:#1e9bff"><span>Contact Me</span></a>
+
             </div>
       </div>
     </nav>
