@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="rg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff">
+        <animate attributeName="stop-color" values="#ff4d4d;#4dff4d;#4d4dff;#ff4d4d" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="60%" stop-color="#00ffff" stop-opacity="0.9">
+        <animate attributeName="stop-color" values="#ff0080;#00ffff;#ffea00;#ff0080" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" fill="transparent"/>
+  <circle cx="32" cy="32" r="18" fill="url(#rg)" filter="url(#glow)"/>
+</svg>
+
+
