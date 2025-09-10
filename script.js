@@ -43,6 +43,26 @@ const observer = new IntersectionObserver(
 
 sections.forEach((s) => observer.observe(s));
 
+// Lightweight scroll reveal: mark elements and observe once
+const revealTargets = document.querySelectorAll(
+  ".about-card, .card, .contact-form, .section-head, .hero-title, .hero-subtitle, .hero-cta"
+);
+const revealObserver = new IntersectionObserver(
+  (entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        obs.unobserve(entry.target);
+      }
+    });
+  },
+  { rootMargin: "0px 0px -10% 0px", threshold: 0.1 }
+);
+revealTargets.forEach((el) => {
+  el.classList.add("will-reveal");
+  revealObserver.observe(el);
+});
+
 // Year in footer
 const yearEl = document.getElementById("year");
 if (yearEl) {
@@ -73,3 +93,18 @@ tiltElements.forEach((el) => {
   el.addEventListener("mousemove", onMove);
   el.addEventListener("mouseleave", reset);
 });
+
+// Subtle hero parallax based on mouse position
+const heroGlow = document.querySelector(".hero-glow");
+if (heroGlow) {
+  let raf = 0;
+  window.addEventListener("mousemove", (e) => {
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      const px = (e.clientX / window.innerWidth - 0.5) * 2; // -1..1
+      const py = (e.clientY / window.innerHeight - 0.5) * 2; // -1..1
+      heroGlow.style.setProperty("--px", px.toFixed(3));
+      heroGlow.style.setProperty("--py", py.toFixed(3));
+    });
+  });
+}
